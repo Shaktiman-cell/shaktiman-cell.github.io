@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shalendra Tiwari — Unreal Engine Developer</title>
+  <meta name="description" content="Portfolio of Shalendra Tiwari — B.Tech AI/ML student and Unreal Engine 5 game developer specialising in Blueprints, GAS, C++ and AI systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="cur-dot"></div>
+  <div id="cur-ring"></div>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="hdr">
+    <a href="#" class="hdr-logo">ST</a>
+    <nav class="hdr-nav">
+      <a href="#about"   class="hdr-link">About</a>
+      <a href="#skills"  class="hdr-link">Skills</a>
+      <a href="#work"    class="hdr-link">Work</a>
+      <a href="#contact" class="hdr-link">Contact</a>
+    </nav>
+    <a href="mailto:shalendratiwari34@gmail.com" class="hdr-cta">Let's Talk</a>
+  </header>
+
+  <!-- ═══ HERO — bg-samurai ═══ -->
+  <section class="hero" id="home">
+    <div class="sec-bg" style="background-image:url('img/bg-samurai.jpg')"></div>
+    <div class="sec-ov"></div>
+    <div class="sec-body">
+      <p class="hero-eyebrow" data-reveal>Unreal Engine · AI/ML · Game Dev</p>
+      <h1 class="hero-name" data-reveal data-delay="1">
+        <span class="word">Shalendra</span>
+        <span class="word word--outline">Tiwari</span>
+      </h1>
+      <p class="hero-desc" data-reveal data-delay="2">
+        B.Tech AI &amp; ML · Expected 2027<br>
+        Building epic combat, time-manipulation mechanics<br>
+        and smart boss fights in Unreal Engine 5.
+      </p>
+      <div class="hero-actions" data-reveal data-delay="3">
+        <a href="#work"    class="btn btn--fill">View My Work</a>
+        <a href="#contact" class="btn btn--outline">Get in Touch</a>
+      </div>
+    </div>
+    <span class="hero-deco" aria-hidden="true">UE5</span>
+    <div class="hero-scroll">
+      <div class="scroll-track"><div class="scroll-thumb"></div></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT — bg-cherry ═══ -->
+  <section class="section about" id="about">
+    <div class="sec-bg" style="background-image:url('img/bg-cherry.png')"></div>
+    <div class="sec-ov"></div>
+    <div class="sec-body wrap">
+      <span class="sec-label" data-reveal>01 — About me</span>
+      <div class="about-grid">
+        <h2 class="about-title" data-reveal data-delay="1">
+          I build <em>original</em><br>game systems<br>from scratch.
+        </h2>
+        <div class="about-body">
+          <p data-reveal data-delay="2">
+            I'm <strong>Shalendra Tiwari</strong>, a B.Tech student in Artificial Intelligence
+            &amp; Machine Learning (graduating 2027). Since 2026 I've been engineering
+            ambitious, original experiences in Unreal Engine 5 — no copy-paste tutorials,
+            just pure systems thinking and engineering.
+          </p>
+          <p data-reveal data-delay="3">
+            My primary tool is <strong>Blueprints</strong>, and I back it up with
+            <strong>intermediate C++</strong> for performance-critical systems. I also
+            bring <strong>Python &amp; ML knowledge</strong> from my degree — though I keep
+            game dev and AI/ML as separate disciplines.
+          </p>
+          <ul class="about-facts" data-reveal data-delay="4">
+            <li><span class="fact-n">4+</span><span class="fact-l">Projects Shipped</span></li>
+            <li><span class="fact-n">UE5</span><span class="fact-l">Primary Engine</span></li>
+            <li><span class="fact-n">2027</span><span class="fact-l">Graduation</span></li>
+            <li><span class="fact-n">C++</span><span class="fact-l">Intermediate Level</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SKILLS — Animated Tree | bg-katana ═══ -->
+  <section class="section skills" id="skills">
+    <div class="sec-bg" style="background-image:url('img/bg-katana.png')"></div>
+    <div class="sec-ov"></div>
+    <div class="sec-body wrap">
+      
+      <span class="sec-label" data-reveal>02 — Skills</span>
+      <p class="skills-intro" data-reveal data-delay="1">Technologies &amp; disciplines — mapped as a skill tree.</p>
+
+      <div class="skill-tree-wrap" id="skillTreeWrap">
+        <svg class="tree-svg" id="treeSvg" aria-hidden="true"></svg>
+
+        <!-- ROOT -->
+        <div class="tree-root">
+          <div class="snode snode--root" id="sn-root" data-tree="root">
+            <span class="snode-icon">⚡</span>
+            <span class="snode-label">UE5<br>Developer</span>
+          </div>
+        </div>
+
+        <!-- 3 BRANCHES: Programming | Game AI | AI/ML -->
+        <div class="tree-cats">
+          <!-- Programming -->
+          <div class="tree-branch" data-branch="0">
+            <div class="snode snode--cat" data-tree="cat">
+              <span class="snode-icon">{ }</span>
+              <span class="snode-label">Programming</span>
+            </div>
+            <div class="tree-leaves">
+              <div class="snode snode--leaf snode--primary" data-tree="leaf">Blueprints ★</div>
+              <div class="snode snode--leaf" data-tree="leaf">C++ (Intermediate)</div>
+              <div class="snode snode--leaf" data-tree="leaf">GAS</div>
+              <div class="snode snode--leaf" data-tree="leaf">Modular Design</div>
+            </div>
+          </div>
+          <!-- Game AI -->
+          <div class="tree-branch" data-branch="1">
+            <div class="snode snode--cat" data-tree="cat">
+              <span class="snode-icon">🧠</span>
+              <span class="snode-label">Game AI</span>
+            </div>
+            <div class="tree-leaves">
+              <div class="snode snode--leaf" data-tree="leaf">Behavior Trees</div>
+              <div class="snode snode--leaf" data-tree="leaf">Agentic AI</div>
+              <div class="snode snode--leaf" data-tree="leaf">Gen AI for NPCs</div>
+              <div class="snode snode--leaf" data-tree="leaf">Boss AI Design</div>
+            </div>
+          </div>
+          <!-- AI / ML -->
+          <div class="tree-branch" data-branch="2">
+            <div class="snode snode--cat" data-tree="cat">
+              <span class="snode-icon">📊</span>
+              <span class="snode-label">AI / ML</span>
+            </div>
+            <div class="tree-leaves">
+              <div class="snode snode--leaf" data-tree="leaf">Machine Learning</div>
+              <div class="snode snode--leaf" data-tree="leaf">Python</div>
+              <div class="snode snode--leaf" data-tree="leaf">Neural Networks</div>
+              <div class="snode snode--leaf" data-tree="leaf">Data Structures</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WORK — bg-island ═══ -->
+  <section class="section work" id="work">
+    <div class="sec-bg" style="background-image:url('img/bg-island.png')"></div>
+    <div class="sec-ov"></div>
+    <div class="sec-body">
+      <div class="wrap">
+        <span class="sec-label" data-reveal>03 — Projects</span>
+        <h2 class="work-title" data-reveal data-delay="1">Featured Work</h2>
+      </div>
+
+      <div class="projects wrap">
+        <!-- 01 -->
+        <article class="proj" data-reveal data-delay="1">
+          <a href="https://youtu.be/UdiglbGRRr8" target="_blank" rel="noopener" class="proj-media">
+            <img src="img/warrior.png" alt="UE 5.7 Combat Prototype" loading="lazy"/>
+            <div class="proj-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </a>
+          <div class="proj-info">
+            <span class="proj-num">01</span>
+            <h3 class="proj-name">Project Showcase | UE 5.7 | Combat Prototype</h3>
+            <p class="proj-desc">A combat showcase from my current Unreal Engine project (UE 5.7). I've built an advanced, component-based combat system where health, combat logic, and state management are fully modular — designed for extensibility across different character types.</p>
+            <div class="proj-tags"><span>Blueprints</span><span>Combat</span><span>UE 5.7</span><span>Component-Based</span></div>
+            <a href="https://youtu.be/UdiglbGRRr8" target="_blank" rel="noopener" class="proj-link">Watch on YouTube ↗</a>
+          </div>
+        </article>
+
+        <!-- 02 -->
+        <article class="proj proj--flip" data-reveal data-delay="2">
+          <a href="https://youtu.be/uNDN2MPngfc" target="_blank" rel="noopener" class="proj-media">
+            <img src="https://img.youtube.com/vi/uNDN2MPngfc/maxresdefault.jpg" alt="Ekko Time Ability" loading="lazy"/>
+            <div class="proj-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </a>
+          <div class="proj-info">
+            <span class="proj-num">02</span>
+            <h3 class="proj-name">Recreating Ekko's Ability from League of Legends</h3>
+            <p class="proj-desc">I tried to recreate a gameplay mechanic inspired by League of Legends — specifically the ability of Ekko. The idea was to simulate the time-based mechanic: recording the player's state every frame and rewinding back to a past position with a ghost VFX effect.</p>
+            <div class="proj-tags"><span>Time Manipulation</span><span>GAS</span><span>State Rewind</span></div>
+            <a href="https://youtu.be/uNDN2MPngfc" target="_blank" rel="noopener" class="proj-link">Watch on YouTube ↗</a>
+          </div>
+        </article>
+
+        <!-- 03 -->
+        <article class="proj" data-reveal data-delay="3">
+          <a href="https://youtu.be/WINmKZlrN7U" target="_blank" rel="noopener" class="proj-media">
+            <img src="img/warrior.png" alt="Advanced Reusable Combat System" loading="lazy"/>
+            <div class="proj-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </a>
+          <div class="proj-info">
+            <span class="proj-num">03</span>
+            <h3 class="proj-name">Advanced Reusable Combat System – UE 5.7</h3>
+            <p class="proj-desc">An advanced and modular combat system developed in Unreal Engine 5.7. This is an early-stage prototype and not a final implementation. The system is designed to be reusable — any character can be plugged in with minimal configuration, keeping abilities and logic decoupled.</p>
+            <div class="proj-tags"><span>Modular</span><span>GAS</span><span>C++</span><span>Reusable</span></div>
+            <a href="https://youtu.be/WINmKZlrN7U" target="_blank" rel="noopener" class="proj-link">Watch on YouTube ↗</a>
+          </div>
+        </article>
+
+        <!-- 04 -->
+        <article class="proj proj--flip" data-reveal data-delay="4">
+          <a href="https://youtu.be/wVdT-37f0YY" target="_blank" rel="noopener" class="proj-media">
+            <img src="https://img.youtube.com/vi/wVdT-37f0YY/maxresdefault.jpg" alt="UE5 Combat & AI Boss Fights" loading="lazy"/>
+            <div class="proj-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </a>
+          <div class="proj-info">
+            <span class="proj-num">04</span>
+            <h3 class="proj-name">UE5 Combat &amp; AI System – Portfolio Demo</h3>
+            <p class="proj-desc">Showcasing a basic combat system with dodge mechanics, enemy NPC AI, and boss encounters. Enemies use Behavior Tree–based decision making, including a Mini Boss with multiple phases. A foundation for building smarter, more reactive AI-driven fights.</p>
+            <div class="proj-tags"><span>AI</span><span>Boss Design</span><span>Behavior Trees</span><span>Dodge</span></div>
+            <a href="https://youtu.be/wVdT-37f0YY" target="_blank" rel="noopener" class="proj-link">Watch on YouTube ↗</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT — bg-bwtree ═══ -->
+  <section class="section contact" id="contact">
+    <div class="sec-bg" style="background-image:url('img/bg-bwtree.png')"></div>
+    <div class="sec-ov"></div>
+    <div class="sec-body wrap">
+      
+      <span class="sec-label" data-reveal>04 — Say Hello</span>
+      <h2 class="contact-title" data-reveal data-delay="1">
+        Let's build<br><em>something epic.</em>
+      </h2>
+      
+      <div class="contact-email" data-reveal data-delay="2">
+        shalendratiwari34@gmail.com
+      </div>
+
+      <div class="socials" data-reveal data-delay="3">
+        <a href="mailto:shalendratiwari34@gmail.com" class="social-link">
+          <span class="social-name">Email Me</span>
+          <span class="social-arrow">↗</span>
+        </a>
+        <a href="https://www.linkedin.com/in/shalendra-tiwari-61aba335a" target="_blank" rel="noopener" class="social-link">
+          <span class="social-name">LinkedIn</span>
+          <span class="social-arrow">↗</span>
+        </a>
+        <a href="https://shal_ue.artstation.com/" target="_blank" rel="noopener" class="social-link">
+          <span class="social-name">ArtStation</span>
+          <span class="social-arrow">↗</span>
+        </a>
+        <a href="https://github.com/Shaktiman-cell" target="_blank" rel="noopener" class="social-link">
+          <span class="social-name">GitHub</span>
+          <span class="social-arrow">↗</span>
+        </a>
+        <a href="https://www.youtube.com/@shaktiman-cell" target="_blank" rel="noopener" class="social-link">
+          <span class="social-name">YouTube</span>
+          <span class="social-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="big-name" aria-hidden="true">SHALENDRA</div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <span class="footer-logo">ST</span>
+    <span class="footer-copy">© 2026 Shalendra Tiwari</span>
+    <span class="footer-stack">Built with HTML · CSS · JS</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
