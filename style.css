@@ -36,7 +36,6 @@ body {
   font-weight: 300;
   line-height: 1.7;
   overflow-x: hidden;
-  cursor: none;
 }
 
 ::selection { background: var(--ivory); color: var(--bg); }
@@ -47,27 +46,7 @@ body {
 ::-webkit-scrollbar-thumb { background: #333333; border-radius: 2px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--ivory); }
 
-/* ── CURSOR ──────────────────────────────────────────────────── */
-#cur-dot {
-  position: fixed; width: 7px; height: 7px;
-  background: var(--ivory);
-  border-radius: 50%; pointer-events: none; z-index: 9999;
-  top: 0; left: 0;
-  will-change: transform;
-  transform: translate(-50%, -50%);
-  transition: background .15s, width .1s, height .1s;
-}
-#cur-ring {
-  position: fixed; width: 36px; height: 36px;
-  border: 1px solid rgba(255,255,255,.4);
-  border-radius: 50%; pointer-events: none; z-index: 9998;
-  top: 0; left: 0;
-  will-change: transform;
-  transform: translate(-50%, -50%);
-  transition: width .25s, height .25s, border-color .25s;
-}
-body.hov #cur-dot  { background: var(--ivory); width: 12px; height: 12px; }
-body.hov #cur-ring { width: 54px; height: 54px; border-color: rgba(255,255,255,.6); }
+
 
 /* ── LAYOUT ──────────────────────────────────────────────────── */
 .wrap  { max-width: 1280px; margin: 0 auto; padding: 0 5vw; }
@@ -99,12 +78,12 @@ strong { font-weight: 600; color: var(--ivory); }
   display: inline-flex; align-items: center; gap: .5rem;
   padding: .8rem 2.2rem; border-radius: 50px;
   font-family: var(--f-body); font-size: .88rem; font-weight: 500;
-  letter-spacing: .03em; transition: all .3s; cursor: none;
+  letter-spacing: .03em; transition: all .3s; cursor: pointer;
 }
 .btn--fill   { background: var(--ivory); color: var(--bg); }
-.btn--fill:hover { background: var(--ivory); color: #000000; transform: translateY(-2px); }
+.btn--fill:hover { background: #e0e0e0; color: var(--bg); transform: translateY(-2px); }
 .btn--outline { border: 1.5px solid rgba(232,226,212,.35); color: var(--ivory2); }
-.btn--outline:hover { border-color: var(--ivory); color: var(--ivory); transform: translateY(-2px); }
+.btn--outline:hover { background: var(--ivory); color: var(--bg); transform: translateY(-2px); }
 
 /* ═══════════════════════════════════════════════════════════════
    SHARED BG LAYER SYSTEM
