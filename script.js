@@ -8,16 +8,18 @@ const dot  = document.getElementById('cur-dot');
 const ring = document.getElementById('cur-ring');
 let mx = 0, my = 0, rx = 0, ry = 0;
 
+// GPU layer hints so cursor moves never trigger layout
+dot.style.willChange  = 'transform';
+ring.style.willChange = 'transform';
+
 document.addEventListener('mousemove', e => {
   mx = e.clientX; my = e.clientY;
-  dot.style.left = mx + 'px';
-  dot.style.top  = my + 'px';
-});
+  dot.style.transform  = `translate(calc(${mx}px - 50%), calc(${my}px - 50%))`;
+}, { passive: true });
 (function followRing() {
-  rx += (mx - rx) * 0.1;
-  ry += (my - ry) * 0.1;
-  ring.style.left = rx + 'px';
-  ring.style.top  = ry + 'px';
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  ring.style.transform = `translate(calc(${rx}px - 50%), calc(${ry}px - 50%))`;
   requestAnimationFrame(followRing);
 })();
 
@@ -55,15 +57,21 @@ const secObs = new IntersectionObserver(entries => {
 }, { threshold: 0.45 });
 sections.forEach(s => secObs.observe(s));
 
-/* ── HERO PARALLAX ─────────────────────────────────────── */
+/* ── HERO PARALLAX (RAF-throttled) ─────────────────────── */
 const heroName = document.querySelector('.hero-name');
 const heroDeco = document.querySelector('.hero-deco');
+let heroRafPending = false;
 document.querySelector('.hero')?.addEventListener('mousemove', e => {
-  const dx = (e.clientX - window.innerWidth  / 2) / window.innerWidth;
-  const dy = (e.clientY - window.innerHeight / 2) / window.innerHeight;
-  if (heroName) heroName.style.transform = `translate(${dx * 8}px, ${dy * 5}px)`;
-  if (heroDeco) heroDeco.style.transform = `translate(${dx * -14}px, ${dy * -8}px)`;
-});
+  if (heroRafPending) return;
+  heroRafPending = true;
+  requestAnimationFrame(() => {
+    const dx = (e.clientX - window.innerWidth  / 2) / window.innerWidth;
+    const dy = (e.clientY - window.innerHeight / 2) / window.innerHeight;
+    if (heroName) heroName.style.transform = `translate(${dx * 8}px, ${dy * 5}px)`;
+    if (heroDeco) heroDeco.style.transform = `translate(${dx * -14}px, ${dy * -8}px)`;
+    heroRafPending = false;
+  });
+}, { passive: true });
 
 /* ══════════════════════════════════════════════════════════════
    SKILL TREE ANIMATION
